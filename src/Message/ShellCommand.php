@@ -7,12 +7,9 @@ class ShellCommand
 
     private string $command;
 
-    private array $arguments;
-
-    public function __construct(string $command = "", array $arguments = [])
+    public function __construct(string $command = "")
     {
         $this->command = $command;
-        $this->arguments = $arguments;
     }
 
     public function setCommand(string $command = ""): void
@@ -20,24 +17,9 @@ class ShellCommand
         $this->command = $command;
     }
 
-    public function setArguments(array $arguments = []): void
-    {
-        $this->arguments = $arguments;
-    }
-
-
-
     public function getCommand(): string
     {
         return $this->command;
     }
-
-    public function getArguments(): array
-    {
-        return $this->arguments;
-    }
-
-
-
 
 }

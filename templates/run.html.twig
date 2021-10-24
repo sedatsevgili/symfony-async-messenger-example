@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
     {{ form(form) }}
+    <div style="background-color:#f7f7f9;" class="pt-3">
+        <pre>
+            {{ result }}
+        </pre>
+    </div>
+
 {% endblock %}
