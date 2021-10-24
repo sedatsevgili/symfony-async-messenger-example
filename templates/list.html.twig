@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="mt-5">
+        <a href="{{ path('run_command') }}" class="btn btn-default btn-primary">Run New Command</a>
+    </div>
+
+    <div class="mt-5">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Command</th>
+                <th scope="col">Status</th>
+                <th scope="col">Runned At</th>
+                <th scope="col">Result</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for command in commands %}
+                <tr>
+                    <th scope="row">{{ command.id }}</th>
+                    <td>{{ command.command }}</td>
+                    <td>{{ command.status }}</td>
+                    <td>{{ command.runnedAt|date }}</td>
+                    <td>{{ command.result }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
